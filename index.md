@@ -1,3 +1,5 @@
+## ML Project Fall 22 
+
 # Introduction / Background 
 With the advancement of research in the domain of machine learning, one of the active problems is generating sentences with semantic meaning. A lot of progress has been made in the field of NLP which aims to communicate between computers and humans to perform tasks such as text classification, language modeling, etc. The goal of our project is to generate Machine Learning project ideas using transfer learning and NLP. 
 The dataset that we plan to use consists of titles of all machine learning projects that students at Stanford’s CS229 class have submitted over the years 2004 to 2017(4) and CS230 class from 2018 to 2021(5). It includes ~4200 ideas comprising five to seven words each. We further categorize the dataset into ~7 classes that we use for supervised learning classification. Since our dataset is comparatively small, we will use Google's BERT and ULMFit, which are some of the massive language models trained on publicly available corpus of data for transfer learning. Another potential model that we plan to incorporate is the AWD-LSTM (developed by Salesforce's research team).
