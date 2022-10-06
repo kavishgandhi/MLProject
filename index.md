@@ -1,4 +1,4 @@
-# CS 7641 Project Team 18
+CS 7641 Project Team 18
 
 # Introduction / Background 
 With the advancement of research in the domain of machine learning, one of the active problems is generating sentences with semantic meaning. A lot of progress has been made in the field of NLP which aims to communicate between computers and humans to perform tasks such as text classification, language modeling, etc. The goal of our project is to generate Machine Learning project ideas using transfer learning and NLP. 
