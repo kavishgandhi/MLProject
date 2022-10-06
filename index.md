@@ -15,8 +15,8 @@ Our objective is twofold:
 
 
 # Methods
-### Objective 1:
+### Objective 1 (Unsupervised):
 Since the dataset that we are working on is relatively small, we aim to use transfer learning to leverage pre-trained large language models such as BERT, AWD-LSTM, and ULMFit. We aim to fine tune these models to learn from our domain specific dataset. This would, in an unsupervised manner, result in the model to generate novel machine learning ideas. 
-### Objective 2:
+### Objective 2 (Supervised):
 Since our dataset is unlabelled, a preliminary step towards developing supervised learning models would be to cluster the data and generate labels. The approach is to create embeddings for the sentences (ML topics in our case), and use them to cluster the dataset into ~8 categories. We further use this labeled dataset to design a system to recommend an ML project 
 
