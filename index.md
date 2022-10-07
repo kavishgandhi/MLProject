@@ -1,14 +1,15 @@
-CS 7641 Project Team 18
+CS 7641 Machine Learning Fall 22
+Project Team 18
 
 # Introduction 
-With the advancement of research in the domain of machine learning, one of the active problems is generating sentences with semantic meaning. A lot of progress has been made in the field of NLP to perform tasks such as text classification, language modeling, and natural language understanding. In this project, we plan to leverage and build on top of similar NLP research to generate novel Machine Learning project ideas using transfer learning and classify ML project ideas into different labels. 
+With the advancement of research in the domain of machine learning, one of the active problems is generating sentences with semantic meaning. A lot of progress has been made in the field of NLP to perform tasks such as text classification, language modeling, and natural language understanding. In this project, we plan to leverage and build on top of similar NLP research to generate novel Machine Learning project ideas using transfer learning and classify ML project ideas into different labels.  
 
 
 ### Dataset
-The dataset that we plan to use consists of titles of machine learning projects that students at Stanford’s CS229 class submitted over the years 2004 to 2017 (1) and CS230 class from 2018 to 2021(2). It includes ~4200 ideas, each comprising 5-7 words. We further categorize the dataset into ~8 classes that we use as ground truth labels for supervised learning classification. 
+The dataset that we plan to use consists of titles of machine learning projects that students at Stanford’s CS229 class submitted over the years 2004 to 2016 (1) and CS230 class from 2018 to 2021(2). It includes ~4200 ideas, each comprising 5-7 words. We further categorize the dataset into ~8 classes that we use as ground truth labels for supervised learning classification. 
 
 # Problem definition 
-For courses such as Machine Learning, Deep Learning, and Natural Language Processing, one of the major challenges that students face is to come up with a problem statement or project title. We were also in a similar situation and that's when we thought of solving this problem.  
+For courses such as Machine Learning, Deep Learning, and Natural Language Processing, one of the major challenges that students face is to come up with a problem statement or project title. Being in a similar situation ourselves, we thought of solving this problem.  
 Our objective is twofold:
 1. To generate a novel machine learning project idea, given a corpus of past ML project ideas. (Unsupervised)
 2. To classify a machine learning project idea into different categories (NLP, Robotics, Vision, Health, Finance) (Supervised)
@@ -16,9 +17,10 @@ Our objective is twofold:
 
 # Methods
 ### Objective 1 (Unsupervised):
-Since the dataset that we are working on is relatively small, we aim to use transfer learning (3) to leverage pre-trained large language models such as BERT (4), AWD-LSTM (5), and ULMFit (6). These models are trained on publicly available textual corpus (such as parliamentary records or Wikipedia) and implicitly encode knowledge of the English language. We aim to fine-tune these models to learn from our domain-specific dataset. This would, in an unsupervised manner, result in the model generating novel machine learning ideas.
+Since the dataset that we are working on is relatively small, we aim to use transfer learning (3) to leverage pre-trained large language models such as BERT (4), AWD-LSTM (5), and ULMFit (6). These models are trained on publicly available textual corpus (such as parliamentary records or Wikipedia) and implicitly encode knowledge of the English language. We aim to fine-tune these models to learn from our domain-specific dataset. This would, in an unsupervised manner, result in the model generating novel machine learning ideas. 
 ### Objective 2 (Supervised):
-Our dataset is unlabelled, thus, a preliminary step toward developing supervised learning models would be to tag those titles/ideas manually. We further use this labeled dataset to classify an ML project idea into human-labeled categories using algorithms such as SVM, Multi-class regression, and random forest.
+Our dataset is unlabelled, thus, a preliminary step toward developing supervised learning models would be to tag those titles/ideas manually. We further use this labeled dataset to classify an ML project idea into human-labeled categories using algorithms such as SVM, Multi-class regression, XGBoost, Naive Base Classifier, and random forest.
+
 
 # Results
 
