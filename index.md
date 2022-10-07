@@ -17,7 +17,7 @@ Project Team 18
 8. [Presentation Video](#presentation-video)
 
 # Introduction 
-With the advancement of research in the domain of machine learning, one of the active problems is generating sentences with semantic meaning. A lot of progress has been made in the field of NLP to perform tasks such as text classification, language modeling, and natural language understanding. In this project, we plan to leverage and build on top of similar NLP research to generate novel Machine Learning project ideas using transfer learning and classify ML project ideas into different labels.  
+With the advancement of research in the domain of machine learning, one of the active problems is generating sentences with semantic meaning. A lot of progress has been made in the field of NLP to perform tasks such as text classification, language modeling, and natural language understanding [[4]](#references)[[5]](#references)[[6]](#references). In this project, we plan to leverage and build on top of similar NLP research to generate novel Machine Learning project ideas using transfer learning and classify ML project ideas into different labels.  
 
 
 ### Dataset
@@ -32,9 +32,10 @@ Our objective is twofold:
 
 # Methods
 ### Objective 1 (Unsupervised):
-Since the dataset that we are working on is relatively small, we aim to use transfer learning [[3]](#references) to leverage pre-trained large language models such as BERT [[4]](#references), AWD-LSTM [[5]](#references), and ULMFit [[6]](#references). These models are trained on publicly available textual corpus (such as parliamentary records or Wikipedia) and implicitly encode knowledge of the English language. We aim to fine-tune these models to learn from our domain-specific dataset. This would, in an unsupervised manner, result in the model generating novel machine learning ideas. 
+Since the dataset that we are working on is relatively small, we aim to use transfer learning [[3]](#references) to leverage pre-trained large language models such as BERT, AWD-LSTM, and ULMFit. These models are trained on publicly available textual corpus (such as parliamentary records or Wikipedia) and implicitly encode knowledge of the English language. We aim to fine-tune these models to learn from our domain-specific dataset. This would, in an unsupervised manner, result in the model generating novel machine learning ideas. 
 ### Objective 2 (Supervised):
-Our dataset is unlabelled, thus, a preliminary step toward developing supervised learning models would be to tag those titles/ideas manually. We further use this labeled dataset to classify an ML project idea into human-labeled categories using algorithms such as SVM, Multi-class regression, XGBoost, Naive Base Classifier, and random forest.
+Our dataset is unlabelled, thus, a preliminary step toward developing supervised learning models would be to tag those titles/ideas manually. We further feed this labeled data to machine learning algorithms such as SVM, Multi-class regression, XGBoost, Naive Bayes Classifier, and random forest to train them. During the testing phase, we input a machine learning project idea to the algorithm, and it classifies it into human-labeled categories.
+
 
 
 # Results
