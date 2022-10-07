@@ -6,7 +6,7 @@ With the advancement of research in the domain of machine learning, one of the a
 
 
 ### Dataset
-The dataset that we plan to use consists of titles of machine learning projects that students at Stanford’s CS229 class submitted over the years 2004 to 2016 [1](#references) and CS230 class from 2018 to 2021(2). It includes ~4200 ideas, each comprising 5-7 words. We further categorize the dataset into ~8 classes that we use as ground truth labels for supervised learning classification. 
+The dataset that we plan to use consists of titles of machine learning projects that students at Stanford’s CS229 class submitted over the years 2004 to 2016 [[1]](#references) and CS230 class from 2018 to 2021(2). It includes ~4200 ideas, each comprising 5-7 words. We further categorize the dataset into ~8 classes that we use as ground truth labels for supervised learning classification. 
 
 # Problem definition 
 For courses such as Machine Learning, Deep Learning, and Natural Language Processing, one of the major challenges that students face is to come up with a problem statement or project title. Being in a similar situation ourselves, we thought of solving this problem.  
