@@ -66,4 +66,4 @@ We plan to use sklearn metrics to evaluate the classification performance given 
 
 ![Table](table.JPG)
 
-# Presentation Video
+# [Presentation Video](https://www.youtube.com/watch?v=fOmfPSxn8Qg)
