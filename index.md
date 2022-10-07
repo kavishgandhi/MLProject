@@ -4,17 +4,17 @@ Project Team 18
 # Contents
 1. [Introduction](#introduction)
     1. [Dataset](#dataset)
-### [Problem Definition](#problem-definition)
-### [Methods](#methods)
-#### [Objective 1](#objective-1-unsupervised)
-#### [Objective 2](#objective-2-supervised)
-### [Results](#results)
-#### [Unsupervised](#unsupervised)
-#### [Supervised](#supervised)
-### [References](#references)
-### [Gantt Chart](#gantt-chart)
-### [Contributions](#contribution-table)
-### [Presentation Video](#presentation-video)
+2. [Problem Definition](#problem-definition)
+3. [Methods](#methods)
+    1. [Objective 1](#objective-1-unsupervised)
+    2. [Objective 2](#objective-2-supervised)
+4. [Results](#results)
+    1. [Unsupervised](#unsupervised)
+    2. [Supervised](#supervised)
+5. [References](#references)
+6. [Gantt Chart](#gantt-chart)
+7. [Contributions](#contribution-table)
+8. [Presentation Video](#presentation-video)
 
 # Introduction 
 With the advancement of research in the domain of machine learning, one of the active problems is generating sentences with semantic meaning. A lot of progress has been made in the field of NLP to perform tasks such as text classification, language modeling, and natural language understanding. In this project, we plan to leverage and build on top of similar NLP research to generate novel Machine Learning project ideas using transfer learning and classify ML project ideas into different labels.  
