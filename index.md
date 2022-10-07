@@ -2,8 +2,8 @@ CS 7641 Machine Learning Fall 22
 Project Team 18
 
 # Contents
-### [Introduction](#introduction)
-#### [Dataset](#dataset)
+1. [Introduction](#introduction)
+    1. [Dataset](#dataset)
 ### [Problem Definition](#problem-definition)
 ### [Methods](#methods)
 #### [Objective 1](#objective-1-unsupervised)
