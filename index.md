@@ -1,6 +1,21 @@
 CS 7641 Machine Learning Fall 22
 Project Team 18
 
+# Contents
+### [Introduction](#introduction)
+#### [Dataset](#dataset)
+### [Problem Definition](#problem-definition)
+### [Methods](#methods)
+#### [Objective 1](#objective-1-unsupervised)
+#### [Objective 2](#objective-2-supervised)
+### [Results](#results)
+#### [Unsupervised](#unsupervised)
+#### [Supervised](#supervised)
+### [References](#references)
+### [Gantt Chart](#gantt-chart)
+### [Contributions](#contribution-table)
+### [Presentation Video](#presentation-video)
+
 # Introduction 
 With the advancement of research in the domain of machine learning, one of the active problems is generating sentences with semantic meaning. A lot of progress has been made in the field of NLP to perform tasks such as text classification, language modeling, and natural language understanding. In this project, we plan to leverage and build on top of similar NLP research to generate novel Machine Learning project ideas using transfer learning and classify ML project ideas into different labels.  
 
