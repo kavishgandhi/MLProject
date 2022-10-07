@@ -44,3 +44,10 @@ We plan to use sklearn metrics to evaluate the classification performance given 
 8. [Evaluation Metrics for Multi-Label Classification](https://medium.datadriveninvestor.com/a-survey-of-evaluation-metrics-for-multilabel-classification-bb16e8cd41cd)
 
 
+
+# [Gantt Chart](https://docs.google.com/spreadsheets/d/1Ckuu6r8BdbIab1lo3kJkdjhAnlVZ6WLj/edit#gid=422388448)
+
+# Contribution Table
+
+![Table](table.JPG)
+
