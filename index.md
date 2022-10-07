@@ -32,13 +32,13 @@ We plan to use sklearn metrics to evaluate the classification performance given 
 
 # References
 
-1. [Stanford Projects](https://cs229.stanford.edu/projects2*)
-2. 
-3. 
-4. 
-5. 
-6. 
-7. 
-8. 
+1. [Stanford Projects](https://cs229.stanford.edu/projects2016)
+2. [Past Projects](http://cs230.stanford.edu/past-projects/)
+3. [Transfer Learning for Style-Specific Text Generation](https://nips2018creativity.github.io/doc/Transfer%20Learning%20for%20Style-Specific%20Text%20Generation.pdf)
+4. [BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding](https://arxiv.org/abs/1810.04805)
+5. [Regularizing and Optimizing LSTM Language Models](https://arxiv.org/abs/1708.02182v1)
+6. [Universal Language Model Fine-tuning for Text Classification](https://arxiv.org/abs/1801.06146)
+7. [Glue: A MultiTask Benchmark and Analysis Platform for Natural Language Understanding](https://openreview.net/pdf?id=rJ4km2R5t7)
+8. [Evaluation Metrics for Multi-Label Classification](https://medium.datadriveninvestor.com/a-survey-of-evaluation-metrics-for-multilabel-classification-bb16e8cd41cd)
 
 
