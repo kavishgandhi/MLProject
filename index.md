@@ -51,7 +51,8 @@ Our dataset is unlabelled, thus, a preliminary step toward developing supervised
 # Results and Discussion
 
 For POC we first generate only 10 ideas from the model that we trained on the dataset (can be easily extended, since it depends on the user input on how many generated novel ideas the user wants)
-![results](results.jpg)<div align="center">Results</div>
+![results](results.jpg)
+<div align="center">Results</div>
 
 
 <div align="center">The derogatory term “scrub” means several different things. One definition is someone (especially a game player) who is not good at something (especially a game). By this definition, we all start out as scrubs, and there is certainly no shame in that. I mean the term differently, though. A scrub is a player who is handicapped by self-imposed rules that the game knows nothing about. A scrub does not play to win.</div>
