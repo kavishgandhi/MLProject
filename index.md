@@ -5,16 +5,20 @@ Project Team 18
 1. [Introduction](#introduction)
     1. [Dataset](#dataset)
 2. [Problem Definition](#problem-definition)
-3. [Methods](#methods)
+3. [EDA](#eda)
+4. [Data Collection](#data-collection)
+    1.[Data Preprocessing](#data-preprocessing)
+5. [Methods](#methods)
     1. [Objective 1](#objective-1-unsupervised)
     2. [Objective 2](#objective-2-supervised)
-4. [Results](#results)
-    1. [Unsupervised](#unsupervised)
-    2. [Supervised](#supervised)
-5. [References](#references)
-6. [Gantt Chart](#gantt-chart)
-7. [Contributions](#contribution-table)
-8. [Presentation Video](#presentation-video)
+6. [Results and Discussion](#results-and-discussion)
+    1. [Bert Score](#bert-score)
+    2. [BLEU](#bleu)
+    3. [Self-BLEU](#self-bleu)
+    4. [Word Mover's Distance](#word-movers-distancewmd)
+7. [Future Work](#future-work)
+8. [References](#references)
+9. [Contributions](#contribution-table)
 
 # Introduction 
 With the advancement of research in the domain of machine learning, one of the active problems is generating sentences with semantic meaning. A lot of progress has been made in the field of NLP to perform tasks such as text classification, language modeling, and natural language understanding. BERT[[1]](#references) is designed to pre-train deep bidirectional representations from unlabeled text by jointly conditioning on both the left and right context in all layers. As a result, the pre-trained BERT model can be fine-tuned with just one additional output layer to create state-of-the-art models for a wide range of tasks. ULMFiT[[2]](#references) proposed an effective transfer learning method that can be applied to any task in NLP, and introduce techniques that are key for fine-tuning a language model. The paper which introduces AWD-LSTM[[3]](#references), also proposed ways to investigate strategies for regularizing and optimizing LSTM-based models for the specific problem of word-level language modeling - which means building a model which can calculate the joint level probability of what the next word should be, given a sequence of words. The approach and results displayed using AWD-LSTM were our main source of inspiration behind our project. In this project, we plan to leverage and build on top of similar NLP research and fine-tune pre-trained models to generate novel Machine Learning project ideas using transfer learning and classify ML project ideas into different labels. 
@@ -96,7 +100,7 @@ The variants of BLEU used in our project are, BLEU-2, BLEU-3, and BLEU-4 here, e
 ![unique](unique.jpg)
 <div align="center"> <em>Unique or Not unique according to BLEU scores</em> </div>
 
-### Self-Bleu
+### Self-BLEU
 Self-BLEU is a smart use of the traditional BLEU metric for capturing and quantifying diversity in the generated text. It makes use of BLEU scores and their variants and smaller values mean more diverse generated text.
 
 #### How is it used?
