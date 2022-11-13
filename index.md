@@ -5,20 +5,20 @@ Project Team 18
 1. [Introduction](#introduction)
     1. [Dataset](#dataset)
 2. [Problem Definition](#problem-definition)
-3. [EDA](#eda)
-4. [Data Collection](#data-collection)
-    1.[Data Preprocessing](#data-preprocessing)
-5. [Methods](#methods)
+3. [Data Collection](#data-collection)
+    1. [Data Preprocessing](#data-preprocessing)
+4. [Methods](#methods)
     1. [Objective 1](#objective-1-unsupervised)
     2. [Objective 2](#objective-2-supervised)
-6. [Results and Discussion](#results-and-discussion)
+5. [Results and Discussion](#results-and-discussion)
     1. [Bert Score](#bert-score)
     2. [BLEU](#bleu)
     3. [Self-BLEU](#self-bleu)
     4. [Word Mover's Distance](#word-movers-distancewmd)
-7. [Future Work](#future-work)
-8. [References](#references)
-9. [Contributions](#contribution-table)
+    5. [EDA](#eda)
+6. [Future Work](#future-work)
+7. [References](#references)
+8. [Contributions](#contribution-table)
 
 # Introduction 
 With the advancement of research in the domain of machine learning, one of the active problems is generating sentences with semantic meaning. A lot of progress has been made in the field of NLP to perform tasks such as text classification, language modeling, and natural language understanding. BERT[[1]](#references) is designed to pre-train deep bidirectional representations from unlabeled text by jointly conditioning on both the left and right context in all layers. As a result, the pre-trained BERT model can be fine-tuned with just one additional output layer to create state-of-the-art models for a wide range of tasks. ULMFiT[[2]](#references) proposed an effective transfer learning method that can be applied to any task in NLP, and introduce techniques that are key for fine-tuning a language model. The paper which introduces AWD-LSTM[[3]](#references), also proposed ways to investigate strategies for regularizing and optimizing LSTM-based models for the specific problem of word-level language modeling - which means building a model which can calculate the joint level probability of what the next word should be, given a sequence of words. The approach and results displayed using AWD-LSTM were our main source of inspiration behind our project. In this project, we plan to leverage and build on top of similar NLP research and fine-tune pre-trained models to generate novel Machine Learning project ideas using transfer learning and classify ML project ideas into different labels. 
@@ -34,7 +34,6 @@ Our objective is twofold:
 1. Unsupervised: To generate a novel machine learning project idea, given a corpus of past ML project ideas **(done)**
 2. Supervised: To classify a machine learning project idea into different human-labeled categories such as NLP, Vision, Robotics, Health, Finance, Entertainment, Game AI and Generic ML **(next step)**
 
-# EDA
 
 # Data Collection
 For data collection, we decided to use the publicly available datasets consisting of machine learning project ideas and the best one that we found was the collection of titles of projects done by students at Stanford class CS229 and CS230. We created our dataset after extracting only the titles from websites and saved it as an excel file. We did not use CSV file format, since the titles themselves contain ‘commas’ and that corrupts the dataset. The entire corpus of data contains 4388 project ideas/titles. We used 70% of the data for training and 30% as validation data for the unsupervised model training. Once all the titles were extracted, we manually classified the titles into predefined categories such as NLP, Vision, Robotics, Health, Finance, Game AI, Entertainment, and Generic ML, which will be used for training a supervised model. We did this by going through the labels manually or reading the abstracts if the titles were not reflective of the content. 
@@ -119,6 +118,9 @@ We calculate the WMD value of each candidate(generated) wrt each reference(datas
 
 ![unique](unique.jpg)
 <div align="center"> <em>Unique or Not unique according to BLEU scores</em> </div>
+
+## EDA
+
 
 # Future Work
 We generate only 10 results considering this as a proof of concept for our project and since we are low on resources, we plan on generating more results once we get hold of a good GPU. After that, we plan on building a supervised model (which is the 2nd objective of our project) on the tagged data that we have. Given an ML Project Idea, the supervised model will predict the category(ies) to which it belongs to.
