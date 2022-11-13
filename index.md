@@ -122,14 +122,18 @@ We also plan on creating the end-2-end POC where the unsupervised model will gen
 
 # References
 
-1. [Stanford Projects](https://cs229.stanford.edu/projects2016)
-2. [Past Projects](http://cs230.stanford.edu/past-projects/)
-3. [Transfer Learning for Style-Specific Text Generation](https://nips2018creativity.github.io/doc/Transfer%20Learning%20for%20Style-Specific%20Text%20Generation.pdf)
-4. [BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding](https://arxiv.org/abs/1810.04805)
-5. [Regularizing and Optimizing LSTM Language Models](https://arxiv.org/abs/1708.02182v1)
-6. [Universal Language Model Fine-tuning for Text Classification](https://arxiv.org/abs/1801.06146)
+1. [BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding](https://arxiv.org/abs/1810.04805)
+2. [Universal Language Model Fine-tuning for Text Classification](https://arxiv.org/abs/1801.06146)
+3. [Regularizing and Optimizing LSTM Language Models](https://arxiv.org/abs/1708.02182v1)
+4. [Stanford Projects](https://cs229.stanford.edu/projects2004)
+5. [Past Projects](http://cs230.stanford.edu/past-projects/)
+6. [Transfer Learning for Style-Specific Text Generation](https://nips2018creativity.github.io/doc/Transfer%20Learning%20for%20Style-Specific%20Text%20Generation.pdf)
 7. [Glue: A MultiTask Benchmark and Analysis Platform for Natural Language Understanding](https://openreview.net/pdf?id=rJ4km2R5t7)
 8. [Evaluation Metrics for Multi-Label Classification](https://medium.datadriveninvestor.com/a-survey-of-evaluation-metrics-for-multilabel-classification-bb16e8cd41cd)
+9. [ BERTScore: Evaluating Text Generation with BERT](https://arxiv.org/abs/1904.09675)
+10. [BLEU: a Method for Automatic Evaluation of Machine Translation](https://aclanthology.org/P02-1040.pdf)
+11. [Texygen: A Benchmarking Platform for Text Generation Models](https://arxiv.org/pdf/1802.01886.pdf)
+12. [From Word Embeddings To Document Distances](https://proceedings.mlr.press/v37/kusnerb15.pdf)
 
 
 
