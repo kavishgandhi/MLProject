@@ -70,6 +70,13 @@ Although using CoLA makes perfect sense to filter out the ideas before we can sc
 2. It also gives some False Negatives, for instance,
     * The generated idea ***“projecting calibration of a machine learning algorithms to predict”***, gets removed since it gets a low semantic score from CoLA, but can be treated as an ML Project Idea
 
+
+Despite its disadvantages, the analysis done using CoLA can be a starting point for further analysis since we don't want to run any analysis on the sentences which do not semantically make sense.
+
+After this, we make use of algorithms like BERTScore[9], BLEU[10] - its variants like BLEU-2, BLEU-3, BLEU-4, Self-BLEU[11], and Word Mover’s Distance[12] to score and analyze the results
+
+
+
 # References
 
 1. [Stanford Projects](https://cs229.stanford.edu/projects2016)
