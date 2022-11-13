@@ -17,12 +17,12 @@ Project Team 18
 8. [Presentation Video](#presentation-video)
 
 # Introduction 
-With the advancement of research in the domain of machine learning, one of the active problems is generating sentences with semantic meaning. A lot of progress has been made in the field of NLP to perform tasks such as text classification, language modeling, and natural language understanding. BERT[1] is designed to pre-train deep bidirectional representations from unlabeled text by jointly conditioning on both the left and right context in all layers. As a result, the pre-trained BERT model can be fine-tuned with just one additional output layer to create state-of-the-art models for a wide range of tasks. ULMFiT[2] proposed an effective transfer learning method that can be applied to any task in NLP, and introduce techniques that are key for fine-tuning a language model. The paper which introduces AWD-LSTM[3], also proposed ways to investigate strategies for regularizing and optimizing LSTM-based models for the specific problem of word-level language modeling - which means building a model which can calculate the joint level probability of what the next word should be, given a sequence of words. The approach and results displayed using AWD-LSTM were our main source of inspiration behind our project. In this project, we plan to leverage and build on top of similar NLP research and fine-tune pre-trained models to generate novel Machine Learning project ideas using transfer learning and classify ML project ideas into different labels. 
+With the advancement of research in the domain of machine learning, one of the active problems is generating sentences with semantic meaning. A lot of progress has been made in the field of NLP to perform tasks such as text classification, language modeling, and natural language understanding. BERT[[1]](#references) is designed to pre-train deep bidirectional representations from unlabeled text by jointly conditioning on both the left and right context in all layers. As a result, the pre-trained BERT model can be fine-tuned with just one additional output layer to create state-of-the-art models for a wide range of tasks. ULMFiT[[2]](#references) proposed an effective transfer learning method that can be applied to any task in NLP, and introduce techniques that are key for fine-tuning a language model. The paper which introduces AWD-LSTM[[3]](#references), also proposed ways to investigate strategies for regularizing and optimizing LSTM-based models for the specific problem of word-level language modeling - which means building a model which can calculate the joint level probability of what the next word should be, given a sequence of words. The approach and results displayed using AWD-LSTM were our main source of inspiration behind our project. In this project, we plan to leverage and build on top of similar NLP research and fine-tune pre-trained models to generate novel Machine Learning project ideas using transfer learning and classify ML project ideas into different labels. 
 
 
 
 ### Dataset
-The dataset that we plan to use consists of titles of machine learning projects that students at Stanford’s CS229 class submitted over the years 2004 to 2016 [4] and CS230 class from 2018 to 2021 [5]. It includes 4388 ideas, and we further categorize the dataset into 8 classes that we use as ground truth labels for supervised classification.
+The dataset that we plan to use consists of titles of machine learning projects that students at Stanford’s CS229 class submitted over the years 2004 to 2016 [[4]](#references) and CS230 class from 2018 to 2021 [[5]](#references). It includes 4388 ideas, and we further categorize the dataset into 8 classes that we use as ground truth labels for supervised classification.
 
 # Problem definition 
 For courses such as Machine Learning, Deep Learning, and Natural Language Processing, one of the major challenges that students face is to come up with a problem statement or project title. We were also in a similar situation and that's when we thought of solving this problem. 
@@ -41,7 +41,7 @@ After we created the dataset, the next step was to preprocess and clean the data
 
 # Methods
 ### Objective 1 (Unsupervised):
-Since the dataset that we are working on is relatively small, we have used transfer learning [6] to leverage the pre-trained large language model AWD-LSTM. This model is trained on publicly available textual corpus (such as parliamentary records or Wikipedia) and implicitly encodes knowledge of the English language. It is a type of recurrent neural network that has been optimized and trained using techniques like DropConnect for regularization, NT-ASGD for optimizations and many more. We then create a language model fine-tuned for our dataset with the pre-trained weights of AWD-LSTM. We first trained the last layers and left most of the model exactly as it was. To improve our model further, we didn’t unfreeze the whole data but unfreeze one layer at a time starting with the last 2 layers, then the next layer, and finally the entire model for 20 epochs. We then generated 10 ideas and evaluated the results according to our metrics.
+Since the dataset that we are working on is relatively small, we have used transfer learning [[6]](#references) to leverage the pre-trained large language model AWD-LSTM. This model is trained on publicly available textual corpus (such as parliamentary records or Wikipedia) and implicitly encodes knowledge of the English language. It is a type of recurrent neural network that has been optimized and trained using techniques like DropConnect for regularization, NT-ASGD for optimizations and many more. We then create a language model fine-tuned for our dataset with the pre-trained weights of AWD-LSTM. We first trained the last layers and left most of the model exactly as it was. To improve our model further, we didn’t unfreeze the whole data but unfreeze one layer at a time starting with the last 2 layers, then the next layer, and finally the entire model for 20 epochs. We then generated 10 ideas and evaluated the results according to our metrics.
 
 ### Objective 2 (Supervised):
 Our dataset is unlabelled, thus, a preliminary step toward developing supervised learning models would be to tag those titles/ideas manually. We further feed this labeled data to machine learning algorithms such as SVM, Multi-class regression, XGBoost, Naive Bayes Classifier, and random forest to train them. During the testing phase, we input a machine learning project idea to the algorithm, and it classifies it into human-labeled categories.
@@ -57,7 +57,7 @@ For POC we first generate only 10 ideas from the model that we trained on the da
 <div align="center"> <em>Results</em> </div>
 
 
-We manually verified the generated results and none of them were from the training dataset, we further use **GLUE-CoLA**[7] to judge the grammatical acceptability of a sentence, with the goal of testing their linguistic competence and removing those which do not have semantic meaning, we are left with the following ideas.
+We manually verified the generated results and none of them were from the training dataset, we further use **GLUE-CoLA**[[7]](#references) to judge the grammatical acceptability of a sentence, with the goal of testing their linguistic competence and removing those which do not have semantic meaning, we are left with the following ideas.
 
 
 ![glue-cola](cola.jpg)
@@ -73,7 +73,7 @@ Although using CoLA makes perfect sense to filter out the ideas before we can sc
 
 Despite its disadvantages, the analysis done using CoLA can be a starting point for further analysis since we don't want to run any analysis on the sentences which do not semantically make sense.
 
-After this, we make use of algorithms like BERTScore[9], BLEU[10] - its variants like BLEU-2, BLEU-3, BLEU-4, Self-BLEU[11], and Word Mover’s Distance[12] to score and analyze the results.
+After this, we make use of algorithms like BERTScore[[9]](#references), BLEU[[10]](#references) - its variants like BLEU-2, BLEU-3, BLEU-4, Self-BLEU[[11]](#references), and Word Mover’s Distance[[12]](#references) to score and analyze the results.
 
 ### BERT Score
 Uses BERT for calculating the quality of text generated by NLG systems. It captures the semantic aspect by using the contextualized embeddings generated by the BERT model. It calculates Precision, Recall, and F-score according to the following formulae, where *x* is the reference and  *xˆ* is the candidate sentence. 
@@ -136,11 +136,7 @@ We also plan on creating the end-2-end POC where the unsupervised model will gen
 12. [From Word Embeddings To Document Distances](https://proceedings.mlr.press/v37/kusnerb15.pdf)
 
 
-
-# [Gantt Chart](https://docs.google.com/spreadsheets/d/1Ckuu6r8BdbIab1lo3kJkdjhAnlVZ6WLj/edit#gid=422388448)
-
 # Contribution Table
 
 ![Table](table.JPG)
 
-# [Presentation Video](https://www.youtube.com/watch?v=fOmfPSxn8Qg)
