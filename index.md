@@ -27,8 +27,8 @@ The dataset that we plan to use consists of titles of machine learning projects 
 # Problem definition 
 For courses such as Machine Learning, Deep Learning, and Natural Language Processing, one of the major challenges that students face is to come up with a problem statement or project title. We were also in a similar situation and that's when we thought of solving this problem. 
 Our objective is twofold:
-1. Unsupervised: To generate a novel machine learning project idea, given a corpus of past ML project ideas**(done)**
-2. Supervised: To classify a machine learning project idea into different human-labeled categories such as NLP, Vision, Robotics, Health, Finance, Entertainment, Game AI and Generic ML**(next step)**
+1. Unsupervised: To generate a novel machine learning project idea, given a corpus of past ML project ideas **(done)**
+2. Supervised: To classify a machine learning project idea into different human-labeled categories such as NLP, Vision, Robotics, Health, Finance, Entertainment, Game AI and Generic ML **(next step)**
 
 # EDA
 
@@ -54,9 +54,14 @@ For POC we first generate only 10 ideas from the model that we trained on the da
 
 
 ![results](results.jpg)         
-<div align="center">Results</div>
+<div align="center"> *Results* </div>
 
 
+We manually verified the generated results and none of them were from the training dataset, we further use **GLUE-CoLA**[7] to judge the grammatical acceptability of a sentence, with the goal of testing their linguistic competence and removing those which do not have semantic meaning, we are left with the following ideas
+
+
+![glue-cola](bleu.jpg)
+<div align="center"> *Grammatically correct results (according to CoLA)* </div>
 
 # References
 
