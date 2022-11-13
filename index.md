@@ -54,7 +54,7 @@ For POC we first generate only 10 ideas from the model that we trained on the da
 
 
 ![results](results.jpg)         
-<div align="center"> *Results* </div>
+<div align="center"> <em>Results</em> </div>
 
 
 We manually verified the generated results and none of them were from the training dataset, we further use **GLUE-CoLA**[7] to judge the grammatical acceptability of a sentence, with the goal of testing their linguistic competence and removing those which do not have semantic meaning, we are left with the following ideas
