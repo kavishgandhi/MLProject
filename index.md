@@ -61,7 +61,14 @@ We manually verified the generated results and none of them were from the traini
 
 
 ![glue-cola](bleu.jpg)
-<div align="center"> *Grammatically correct results (according to CoLA)* </div>
+<div align="center"> <em>Grammatically correct results (according to CoLA)</em> </div>
+
+
+Although using CoLA makes perfect sense to filter out the ideas before we can score them as ‘Unique’ or ‘Not Unique’, the CoLA metric has its disadvantages:
+1. It gives some False Positives, for instance,
+    * In the 3rd idea in the above image ***“and other neural networks”***, the sentence in itself is semantically correct but cannot be treated as an ML project Idea
+2. It also gives some False Negatives, for instance,
+    * The generated idea ***“projecting calibration of a machine learning algorithms to predict”***, gets removed since it gets a low semantic score from CoLA, but can be treated as an ML Project Idea
 
 # References
 
