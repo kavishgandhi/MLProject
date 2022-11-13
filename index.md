@@ -51,7 +51,7 @@ Our dataset is unlabelled, thus, a preliminary step toward developing supervised
 # Results and Discussion
 
 For POC we first generate only 10 ideas from the model that we trained on the dataset (can be easily extended, since it depends on the user input on how many generated novel ideas the user wants)
-![results](results.jpg)
+![results](results.jpg)*Results*
 
 # References
 
