@@ -7,15 +7,14 @@ Project Team 18
 2. [Problem Definition](#problem-definition)
 3. [Data Collection](#data-collection)
     1. [Data Preprocessing](#data-preprocessing)
+    2. [Exploratory Data Analysis](#exploratory-data-analysiseda)
 4. [Methods](#methods)
-    1. [Objective 1](#objective-1-unsupervised)
-    2. [Objective 2](#objective-2-supervised)
+    1. [Unsupervised](#unsupervised-learning)
 5. [Results and Discussion](#results-and-discussion)
     1. [Bert Score](#bert-score)
     2. [BLEU](#bleu)
     3. [Self-BLEU](#self-bleu)
-    4. [Word Mover's Distance](#word-movers-distancewmd)
-    5. [Exploratory Data Analysis](#exploratory-data-analysiseda)
+    4. [Word Mover's Distance](#word-movers-distancewmd)  
 6. [Future Work](#future-work)
 7. [References](#references)
 8. [Contributions](#contribution-table)
@@ -41,13 +40,44 @@ For data collection, we decided to use the publicly available datasets consistin
 ### Data Preprocessing
 After we created the dataset, the next step was to preprocess and clean the data. We process the data to extract only useful information and remove any inconsistencies such as missing values, noisy data, or non-informative features. We remove all the duplicate project titles, by first converting them into lowercase and then scraping off the duplicate values. Given that our dataset consists of project titles, we also eliminated all project ideas with less than 3 words as input. The idea behind this is that project titles with just one or two words, for example, “Bootstrapping”, “Al Mahjong”, “MindMouse”, “rClassifier” etc.,  were not very descriptive and did not seem to add much value to the training dataset. They might even further corrupt the dataset in the case of supervised learning. We further processed the dataset and removed the stopwords such as “and”, “of”, “the” etc. However, in our case, removing these resulted in the project title ideas losing their meanings which were required for our processing since it might have resulted in. For example, input such as “A System for Segmenting Video of Juggling” would become “System Segmenting Video Juggling” and might result in a Garbage in Garbage out situation. Thus, we did not use this as a feature for our dataset. 
 
+### Exploratory Data Analysis(EDA)
+Exploratory data analysis is the process of generating insights, exploring data, testing hypotheses, checking assumptions and realizing underlying hidden patterns in the data. The dataset has 4388 ML project ideas tagged as one of the - (Entertainment, Health, NLP, Vision, Robotics, Game AI, Finance, Generic ML). Before drawing out the statistics, we preprocess the data. This phase includes removing special characters and stopwords, converting to lowercase, and lemmatization. The class distribution of the dataset is shown below. 
+
+<p align="center">
+  <img src="eda1.png" />
+</p>
+<div align="center"> <em>Class Distribution</em> </div>
+
+The number of occurrences of a word in a class is calculated and the 30 most frequently occurring words in each class are plotted. But this does not give a good approximation of the relevance of the word to the class and we resort to TF-IDF as a scoring measure. TF is the term frequency which is the ratio of the number of times a particular word occurred in the class to the total number of words in the class. IDF or inverse document frequency is defined as the logarithm of the number of classes divided by the number of classes containing the word. IDF for a word is constant across the data corpus. Thus the IDF identifies the importance of rare words across the whole corpus. The formulae are
+
+![formulae](eda2.PNG)
+
+w<sub>ij</sub> = TF_IDF product of i<sup>th</sup> word with respect to class j.
+
+The following images are the plots for frequent words and highest TF_IDF score. The left plot represents the top 30 most frequent words in the class whereas the right plot represents the top 30 words with the highest TF_IDF score for that class.
+
+
+![testing2](testing2.png)
+
+![finance](finance.png)
+
+![gameai](gameai.png)
+
+![genericml](genericml.png)
+
+![health](health.png)
+
+![nlp](nlp.png)
+
+![robotics](robotics.png)
+
+![vision](vision.png)
+
+Some words often appear with high frequency in machine learning project titles like ‘classification’, ‘use’, and ‘recognition’. However, these words exist in every class and thus play no significant role in distinguishing between two classes. In other words, they show low variance frequency across classes. This is where TF-IDF comes into play. We need words that appear with high frequency in a class but are also sparsely observed in other classes. In the figure above, we see that for the class ‘Vision’, while ‘use’,’ recognition’, and ‘detection’ have the highest frequency, they do not appear in the top 30 terms with the highest TF-IDF for the class, meaning that they won’t perform well as a feature in the classification task. In the future, we will use a combination of words with the highest TF-IDF for the classification task. 
 
 # Methods
-### Objective 1 (Unsupervised):
+### Unsupervised Learning:
 Since the dataset that we are working on is relatively small, we have used transfer learning [[6]](#references) to leverage the pre-trained large language model AWD-LSTM. This model is trained on publicly available textual corpus (such as parliamentary records or Wikipedia) and implicitly encodes knowledge of the English language. It is a type of recurrent neural network that has been optimized and trained using techniques like DropConnect for regularization, NT-ASGD for optimizations and many more. We then create a language model fine-tuned for our dataset with the pre-trained weights of AWD-LSTM. We first trained the last layers and left most of the model exactly as it was. To improve our model further, we didn’t unfreeze the whole data but unfreeze one layer at a time starting with the last 2 layers, then the next layer, and finally the entire model for 20 epochs. We then generated 10 ideas and evaluated the results according to our metrics.
-
-### Objective 2 (Supervised):
-Our dataset is unlabelled, thus, a preliminary step toward developing supervised learning models would be to tag those titles/ideas manually. We further feed this labeled data to machine learning algorithms such as SVM, Multi-class regression, XGBoost, Naive Bayes Classifier, and random forest to train them. During the testing phase, we input a machine learning project idea to the algorithm, and it classifies it into human-labeled categories.
 
 
 
@@ -121,40 +151,7 @@ We calculate the WMD value of each candidate(generated) wrt each reference(datas
 ![unique](unique.jpg)
 <div align="center"> <em>Unique or Not unique according to BLEU scores</em> </div>
 
-## Exploratory Data Analysis(EDA)
-Exploratory data analysis is the process of generating insights, exploring data, testing hypotheses, checking assumptions and realizing underlying hidden patterns in the data. The dataset has 4388 ML project ideas tagged as one of the - (Entertainment, Health, NLP, Vision, Robotics, Game AI, Finance, Generic ML). Before drawing out the statistics, we preprocess the data. This phase includes removing special characters and stopwords, converting to lowercase, and lemmatization. The class distribution of the dataset is shown below. 
 
-<p align="center">
-  <img src="eda1.png" />
-</p>
-<div align="center"> <em>Class Distribution</em> </div>
-
-The number of occurrences of a word in a class is calculated and the 30 most frequently occurring words in each class are plotted. But this does not give a good approximation of the relevance of the word to the class and we resort to TF-IDF as a scoring measure. TF is the term frequency which is the ratio of the number of times a particular word occurred in the class to the total number of words in the class. IDF or inverse document frequency is defined as the logarithm of the number of classes divided by the number of classes containing the word. IDF for a word is constant across the data corpus. Thus the IDF identifies the importance of rare words across the whole corpus. The formulae are
-
-![formulae](eda2.PNG)
-
-w<sub>ij</sub> = TF_IDF product of i<sup>th</sup> word with respect to class j.
-
-The following images are the plots for frequent words and highest TF_IDF score. The left plot represents the top 30 most frequent words in the class whereas the right plot represents the top 30 words with the highest TF_IDF score for that class.
-
-
-![testing2](testing2.png)
-
-![finance](finance.png)
-
-![gameai](gameai.png)
-
-![genericml](genericml.png)
-
-![health](health.png)
-
-![nlp](nlp.png)
-
-![robotics](robotics.png)
-
-![vision](vision.png)
-
-Some words often appear with high frequency in machine learning project titles like ‘classification’, ‘use’, and ‘recognition’. However, these words exist in every class and thus play no significant role in distinguishing between two classes. In other words, they show low variance frequency across classes. This is where TF-IDF comes into play. We need words that appear with high frequency in a class but are also sparsely observed in other classes. In the figure above, we see that for the class ‘Vision’, while ‘use’,’ recognition’, and ‘detection’ have the highest frequency, they do not appear in the top 30 terms with the highest TF-IDF for the class, meaning that they won’t perform well as a feature in the classification task. In the future, we will use a combination of words with the highest TF-IDF for the classification task. 
 
 # Future Work
 We generate only 10 results considering this as a proof of concept for our project and since we are low on resources, we plan on generating more results once we get hold of a good GPU. After that, we plan on building a supervised model (which is the 2nd objective of our project) on the tagged data that we have. Given an ML Project Idea, the supervised model will predict the category(ies) to which it belongs to.
