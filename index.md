@@ -27,6 +27,7 @@ With the advancement of research in the domain of machine learning, one of the a
 
 ### Dataset
 The dataset that we plan to use consists of titles of machine learning projects that students at Stanford’s CS229 class submitted over the years 2004 to 2016 [[4]](#references) and CS230 class from 2018 to 2021 [[5]](#references). It includes 4388 ideas, and we further categorize the dataset into 8 classes that we use as ground truth labels for supervised classification.
+[Here is the link for the dataset](https://docs.google.com/spreadsheets/d/19fAHp1SJHfvqiwqGdqzZJn3pgNx1mcGUdA0kcfWRiAo/edit#gid=0)
 
 # Problem definition 
 For courses such as Machine Learning, Deep Learning, and Natural Language Processing, one of the major challenges that students face is to come up with a problem statement or project title. We were also in a similar situation and that's when we thought of solving this problem. 
@@ -84,6 +85,7 @@ Since the dataset that we are working on is relatively small, we have used trans
 
 # Results and Discussion
 
+[Link to the code](https://colab.research.google.com/drive/158NWoI-Czpez8yeF9J-zZrKxLc5tGjiN)
 For POC we first generate only 10 ideas from the model that we trained on the dataset (can be easily extended, since it depends on the user input on how many generated novel ideas the user wants).
 
 
