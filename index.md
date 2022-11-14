@@ -122,6 +122,8 @@ We calculate the WMD value of each candidate(generated) wrt each reference(datas
 ## EDA
 ![testing](testing.png)
 
+
+![testing2](testing2.png)
 # Future Work
 We generate only 10 results considering this as a proof of concept for our project and since we are low on resources, we plan on generating more results once we get hold of a good GPU. After that, we plan on building a supervised model (which is the 2nd objective of our project) on the tagged data that we have. Given an ML Project Idea, the supervised model will predict the category(ies) to which it belongs to.
 We also plan on creating the end-2-end POC where the unsupervised model will generate a new ML project idea and we will feed that to our supervised model which will tag it into the relevant category(ies).
