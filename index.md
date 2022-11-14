@@ -107,7 +107,9 @@ Self-BLEU is a smart use of the traditional BLEU metric for capturing and quanti
 2. Iterate over all the unique sentences, generate BLEU scores for all, and store them in a list (we use BLEU-2, BLEU-3, and BLEU-4).
 3. Finally, take the average of the list calculated as a part of step 2.
 
-![diverse](diversity.jpg)
+<p align="center">
+  <img src="diversity.jpg" />
+</p>
 <div align="center"> <em>Diversity in the generated text</em> </div>
 
 ### Word Mover’s Distance(WMD)
