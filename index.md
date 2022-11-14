@@ -85,7 +85,8 @@ Since the dataset that we are working on is relatively small, we have used trans
 
 # Results and Discussion
 
-[Link to the code](https://colab.research.google.com/drive/158NWoI-Czpez8yeF9J-zZrKxLc5tGjiN)
+[Link to the code.](https://colab.research.google.com/drive/158NWoI-Czpez8yeF9J-zZrKxLc5tGjiN)
+
 For POC we first generate only 10 ideas from the model that we trained on the dataset (can be easily extended, since it depends on the user input on how many generated novel ideas the user wants).
 
 
