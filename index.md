@@ -130,10 +130,27 @@ The number of occurrences of a word in a class is calculated and the 30 most fre
 ![formulae](eda2.PNG)
 
 w<sub>ij</sub> = TF_IDF product of i<sup>th</sup> word with respect to class j.
-The left plot represents the top 30 most frequent words in the class whereas the right plot represents the top 30 words with the highest TF_IDF score for that class.
+
+The following images are the plots for frequent words and highest TF_IDF score. The left plot represents the top 30 most frequent words in the class whereas the right plot represents the top 30 words with the highest TF_IDF score for that class.
 
 
 ![testing2](testing2.png)
+
+![finance](finance.png)
+
+![gameai](gameai.png)
+
+![genericml](genericml.png)
+
+![health](health.png)
+
+![nlp](nlp.png)
+
+![robotics](robotics.png)
+
+![vision](vision.png)
+
+Some words often appear with high frequency in machine learning project titles like ‘classification’, ‘use’, and ‘recognition’. However, these words exist in every class and thus play no significant role in distinguishing between two classes. In other words, they show low variance frequency across classes. This is where TF-IDF comes into play. We need words that appear with high frequency in a class but are also sparsely observed in other classes. In the figure above, we see that for the class ‘Vision’, while ‘use’,’ recognition’, and ‘detection’ have the highest frequency, they do not appear in the top 30 terms with the highest TF-IDF for the class, meaning that they won’t perform well as a feature in the classification task. In the future, we will use a combination of words with the highest TF-IDF for the classification task. 
 
 # Future Work
 We generate only 10 results considering this as a proof of concept for our project and since we are low on resources, we plan on generating more results once we get hold of a good GPU. After that, we plan on building a supervised model (which is the 2nd objective of our project) on the tagged data that we have. Given an ML Project Idea, the supervised model will predict the category(ies) to which it belongs to.
