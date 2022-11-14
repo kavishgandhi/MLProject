@@ -15,7 +15,7 @@ Project Team 18
     2. [BLEU](#bleu)
     3. [Self-BLEU](#self-bleu)
     4. [Word Mover's Distance](#word-movers-distancewmd)
-    5. [EDA](#eda)
+    5. [Exploratory Data Analysis](#exploratory-data-analysiseda)
 6. [Future Work](#future-work)
 7. [References](#references)
 8. [Contributions](#contribution-table)
@@ -119,11 +119,22 @@ We calculate the WMD value of each candidate(generated) wrt each reference(datas
 ![unique](unique.jpg)
 <div align="center"> <em>Unique or Not unique according to BLEU scores</em> </div>
 
-## EDA
-![testing](testing.png)
+## Exploratory Data Analysis(EDA)
+Exploratory data analysis is the process of generating insights, exploring data, testing hypotheses, checking assumptions and realizing underlying hidden patterns in the data. The dataset has 4388 ML project ideas tagged as one of the - (Entertainment, Health, NLP, Vision, Robotics, Game AI, Finance, Generic ML). Before drawing out the statistics, we preprocess the data. This phase includes removing special characters and stopwords, converting to lowercase, and lemmatization. The class distribution of the dataset is shown below. 
+
+![eda1](eda1.png)
+<div align="center"> <em>Class Distribution</em> </div>
+
+The number of occurrences of a word in a class is calculated and the 30 most frequently occurring words in each class are plotted. But this does not give a good approximation of the relevance of the word to the class and we resort to TF-IDF as a scoring measure. TF is the term frequency which is the ratio of the number of times a particular word occurred in the class to the total number of words in the class. IDF or inverse document frequency is defined as the logarithm of the number of classes divided by the number of classes containing the word. IDF for a word is constant across the data corpus. Thus the IDF identifies the importance of rare words across the whole corpus. The formulae are
+
+![formulae](eda2.PNG)
+
+w<sub>ij</sub> = TF_IDF product of i<sup>th</sup> word with respect to class j.
+The left plot represents the top 30 most frequent words in the class whereas the right plot represents the top 30 words with the highest TF_IDF score for that class.
 
 
 ![testing2](testing2.png)
+
 # Future Work
 We generate only 10 results considering this as a proof of concept for our project and since we are low on resources, we plan on generating more results once we get hold of a good GPU. After that, we plan on building a supervised model (which is the 2nd objective of our project) on the tagged data that we have. Given an ML Project Idea, the supervised model will predict the category(ies) to which it belongs to.
 We also plan on creating the end-2-end POC where the unsupervised model will generate a new ML project idea and we will feed that to our supervised model which will tag it into the relevant category(ies).
