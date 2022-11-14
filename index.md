@@ -174,5 +174,5 @@ We also plan on creating the end-2-end POC where the unsupervised model will gen
 
 # Contribution Table
 
-![Table](table.JPG)
+![Table](table.PNG)
 
