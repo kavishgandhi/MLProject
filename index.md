@@ -11,11 +11,11 @@ Project Team 18
 4. [Methods](#methods)
     1. [Unsupervised](#unsupervised-learning)
 5. [Results and Discussion](#results-and-discussion)
-    1. [CoLa](#cola)
-    1. [Bert Score](#bert-score)
-    2. [BLEU](#bleu)
-    3. [Self-BLEU](#self-bleu)
-    4. [Word Mover's Distance](#word-movers-distancewmd)  
+    1. [CoLA](#cola)
+    2. [Bert Score](#bert-score)
+    3. [BLEU](#bleu)
+    4. [Self-BLEU](#self-bleu)
+    5. [Word Mover's Distance](#word-movers-distancewmd)  
 6. [Future Work](#future-work)
 7. [References](#references)
 8. [Contributions](#contribution-table)
@@ -90,7 +90,7 @@ For POC we first generate only 10 ideas from the model that we trained on the da
 ![results](results.jpg)         
 <div align="center"> <em>Results</em> </div>
 
-### CoLa
+### CoLA
 
 We manually verified the generated results and none of them were from the training dataset, we further use **GLUE-CoLA**[[7]](#references) to judge the grammatical acceptability of a sentence, with the goal of testing their linguistic competence and removing those which do not have semantic meaning, we are left with the following ideas.
 
