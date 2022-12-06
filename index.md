@@ -98,7 +98,9 @@ As we can clearly observe from the output, the tagging is fair enough and we can
 
 After getting the results, we can say that logistic regression performs better than the other 4 models hence we calculate the performance of Logistic Regression model on our dataset and calculate metrics such as - Balanced Accuracy(%), Top1-Accuracy(%), F1 weighted(%), Recall weighted(%), Precision weighted(%), and Jaccard weighted(%) [(see results section)](#results-and-discussion). Looking at the confusion metrics, we can observe that there is a class imbalance problem (which leads to not-so-good results).
 
-![confusion](Images/confusion.png)
+<p align="center">
+  <img src="Images/confusion.png" />
+</p>
 
 We also experimented with some Deep Learning models, but, to have a fair evaluation result, we had to ensure the datasets are sampled with stratification considering that the dataset had a class imbalance problem. We then converted the labels into one-hot encoded vectors for training. Next, we used a preprocessing layer(TextVecorizer and Tokenizer) that maps text features to integer sequences. We then split the data with 70-15-15 train, val and test split. 
 
@@ -106,7 +108,9 @@ We also experimented with some Deep Learning models, but, to have a fair evaluat
 
 The first DL model that we experimented with had the architecture as - 1 convolution + maxpooling layer and 3 Dense Fully Connected layers. The model was trained for 50 epochs with learning_rate = 0.001 and Adam optimizer. The results that we got from this model were not at all up to the mark [(see results section)](#results-and-discussion), the model output included only 4 out of 8 labels and had top-1 accuracy of ~34%. Considering the fact that the dataset was not large enough and had a lot of imbalance this was expected.
 
-![cnnmodel](Images/cnn.png)
+<p align="center">
+  <img src="Images/cnn.png" />
+</p>
 
 #### Deep Learning Model with Transformer-based architecture
 We then experimented with a Transformer based model, considering the great results that such models obtained in the field of NLP over RNN models. We made use of the Bert[[1]](#references) model to get the embeddings using the hugging face API and 3 dense/FC layers. The model gave pretty good results with top-1 accuracy of ~64% and top-3 accuracy of ~89%, hence we then experimented using this DL model with different hyperparameters - learning rate, decay rate, epochs, and batch_size [(see results section)](#results-and-discussion)
