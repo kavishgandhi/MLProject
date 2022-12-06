@@ -32,8 +32,8 @@ The dataset that we plan to use consists of titles of machine learning projects 
 # Problem definition 
 For courses such as Machine Learning, Deep Learning, and Natural Language Processing, one of the major challenges that students face is to come up with a problem statement or project title. We were also in a similar situation and that's when we thought of solving this problem. 
 Our objective is twofold:
-1. Unsupervised: To generate a novel machine learning project idea, given a corpus of past ML project ideas **(done)**
-2. Supervised: To classify a machine learning project idea into different human-labeled categories such as NLP, Vision, Robotics, Health, Finance, Entertainment, Game AI and Generic ML **(next step)**
+1. Unsupervised: To generate a novel machine learning project idea, given a corpus of past ML project ideas.
+2. Supervised: To classify a machine learning project idea into different human-labeled categories such as NLP, Vision, Robotics, Health, Finance, Entertainment, Game AI and Generic ML.
 
 
 # Data Collection
@@ -79,8 +79,16 @@ Some words often appear with high frequency in machine learning project titles l
 
 # Methods
 ### Unsupervised Learning:
-Since the dataset that we are working on is relatively small, we have used transfer learning [[6]](#references) to leverage the pre-trained large language model AWD-LSTM. This model is trained on publicly available textual corpus (such as parliamentary records or Wikipedia) and implicitly encodes knowledge of the English language. It is a type of recurrent neural network that has been optimized and trained using techniques like DropConnect for regularization, NT-ASGD for optimizations and many more. We then create a language model fine-tuned for our dataset with the pre-trained weights of AWD-LSTM. We first trained the last layers and left most of the model exactly as it was. To improve our model further, we didn’t unfreeze the whole data but unfreeze one layer at a time starting with the last 2 layers, then the next layer, and finally the entire model for 20 epochs. We then generated 10 ideas and evaluated the results according to our metrics.
+Since the dataset that we are working on is relatively small, we have used transfer learning [[6]](#references) to leverage the pre-trained Large Language Modes like AWD-LSTM, Transformer [[7]](#references), and TransformerXL [[8]](#references). All of these models can be categorized as Large Language Models (LLM). We know that LSTM is a great tool for anything that has a sequence since the meaning of a word depends on the ones that preceded it, which is exactly what we need in our project. Also, Transformer based LLMs have demonstrated impressive capabilities in open text generation. We also thought that we could look at the sentence as a whole and not just one word at a time (as done by sequential models), hence we also experimented with transfer learning with the Transformer model as the base. 
 
+The models are pre-trained on the publicly available textual corpus and implicitly encode knowledge of the English language. AWD-LSTM is a type of recurrent neural network that has been optimized and trained using techniques like DropConnect for regularization, NT-ASGD for optimizations and many more. We then create a language model fine-tuned for our dataset with the pre-trained weights of AWD-LSTM. The main idea of Transformers is to use a regular neural net instead of an RNN, but with lots of attention layers. Intuitively, those attention layers tell the model to pay more interest to a word when trying to predict its output. TransformerXL is a transformer architecture with a sort of hidden state formed by the results of the intermediate layers on previous tokens. By using this context, those models are capable of learning longer dependencies and can also be used for faster text generation at inference.
+
+The training process for all the above-mentioned architectures is the same -  We first trained the last layers and left most of the model exactly as it was. To improve our model further, we didn’t unfreeze the whole data but unfreeze one layer at a time starting with the last 2 layers, then the next layer, and finally the entire model for “n” epochs, where n=30 for AWD_LSTM and n=90 for Transformer and TransformerXL. We then generated 20 novel ideas and evaluated the results according to our metrics.
+
+### Supervised Learning:
+Traditionally, supervised learning methods have been used for classification problems. With the knowledge of what label the training dataset has, we train models that seek out certain features when trying to make a prediction about what label a testing data point should be given. Specifically, we chose to focus on  Random Forest Classifiers, LinearSVC, MultinomialNB, Logistic Regression, and two Deep Learning models based on CNN and Transformers.
+
+We did the same preprocessing as in the case of unsupervised learning models. We used a cross-validation approach between four models - Random Forest Classifiers, LinearSVC, MultinomialNB and Logistic Regression. To observe which unigrams and bigrams are more correlated to which tags and to get an idea if the tagging is good enough we make use of chi-squared stats which gives us the following result
 
 
 # Results and Discussion
