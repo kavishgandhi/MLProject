@@ -88,11 +88,32 @@ The training process for all the above-mentioned architectures is the same -  We
 ### Supervised Learning:
 Traditionally, supervised learning methods have been used for classification problems. With the knowledge of what label the training dataset has, we train models that seek out certain features when trying to make a prediction about what label a testing data point should be given. Specifically, we chose to focus on  Random Forest Classifiers, LinearSVC, MultinomialNB, Logistic Regression, and two Deep Learning models based on CNN and Transformers.
 
-We did the same preprocessing as in the case of unsupervised learning models. We used a cross-validation approach between four models - Random Forest Classifiers, LinearSVC, MultinomialNB and Logistic Regression. To observe which unigrams and bigrams are more correlated to which tags and to get an idea if the tagging is good enough we make use of chi-squared stats which gives us the following result
+We did the same preprocessing as in the case of unsupervised learning models. We used a cross-validation approach between four models - Random Forest Classifiers, LinearSVC, MultinomialNB and Logistic Regression. To observe which unigrams and bigrams are more correlated to which tags and to get an idea if the tagging is good enough we make use of chi-squared stats which gives us the following result.
 
+![supervised](Images/supervised.png)
+
+As we can clearly observe from the output, the tagging is fair enough and we can move on with using cross-validation to find which model has a better mean accuracy/performance. The mean accuracy and standard deviation for the models on our dataset are given in the table below.
+
+![tableofmean](Images/meanSD.PNG)
+
+After getting the results, we can say that logistic regression performs better than the other 4 models hence we calculate the performance of Logistic Regression model on our dataset and calculate metrics such as - Balanced Accuracy(%), Top1-Accuracy(%), F1 weighted(%), Recall weighted(%), Precision weighted(%), and Jaccard weighted(%) [(see results section)](#results-and-discussion). Looking at the confusion metrics, we can observe that there is a class imbalance problem (which leads to not-so-good results).
+
+![confusion](Images/confusion.png)
+
+We also experimented with some Deep Learning models, but, to have a fair evaluation result, we had to ensure the datasets are sampled with stratification considering that the dataset had a class imbalance problem. We then converted the labels into one-hot encoded vectors for training. Next, we used a preprocessing layer(TextVecorizer and Tokenizer) that maps text features to integer sequences. We then split the data with 70-15-15 train, val and test split. 
+
+#### Deep Learning Model with CNN-based architecture
+
+The first DL model that we experimented with had the architecture as - 1 convolution + maxpooling layer and 3 Dense Fully Connected layers. The model was trained for 50 epochs with learning_rate = 0.001 and Adam optimizer. The results that we got from this model were not at all up to the mark [(see results section)](#results-and-discussion), the model output included only 4 out of 8 labels and had top-1 accuracy of ~34%. Considering the fact that the dataset was not large enough and had a lot of imbalance this was expected.
+
+![cnnmodel](Images/cnn.png)
+
+#### Deep Learning Model with Transformer-based architecture
+We then experimented with a Transformer based model, considering the great results that such models obtained in the field of NLP over RNN models. We made use of the Bert[[1]](#references) model to get the embeddings using the hugging face API and 3 dense/FC layers. The model gave pretty good results with top-1 accuracy of ~64% and top-3 accuracy of ~89%, hence we then experimented using this DL model with different hyperparameters - learning rate, decay rate, epochs, and batch_size [(see results section)](#results-and-discussion)
+
+![transformer](Images/transformer.png)
 
 # Results and Discussion
-
 [Link to the code.](https://colab.research.google.com/drive/158NWoI-Czpez8yeF9J-zZrKxLc5tGjiN)
 
 For POC we first generate only 10 ideas from the model that we trained on the dataset (can be easily extended, since it depends on the user input on how many generated novel ideas the user wants).
