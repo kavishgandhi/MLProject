@@ -11,8 +11,6 @@ Project Team 18
 4. [Methods](#methods)
     1. [Unsupervised](#unsupervised-learning)
     2. [Supervised](#supervised-learning)
-        1. [Deep Learning Model with CNN-based architecture](#deep-learning-model-with-cnn-based-architecture)
-        2. [Deep Learning Model with Transformer-based architecture](#deep-learning-model-with-transformer-based-architecture)
 5. [Results and Discussion](#results-and-discussion)
     1. [Unsupervised](#unsupervised-learning-1)
         1. [CoLA](#cola)
@@ -257,7 +255,9 @@ In this project, we experimented with different models and approaches for unsupe
 
 1. **Unsupervised Learning:** After experimenting with models such as AWD LSTM, Transformer, and TransformerXL, we concluded that for the task of natural language creation, Transformers are far more potent than LSTMs or RNNs, but the AWD LSTM variation is not far behind. Both models produce equivalent outcomes and have a strong potential for producing truly excellent results.. 
 
-2. **Supervised Learning:**  We can see that the Transformer-based Deep Learning model outperforms every other model we tested, showcasing the power of transformers once again. One thing to note is that, despite having very little data and a class imbalance in the labels, the Transformer-based model performed admirably during supervised learning and required very little training time. We are confident that with more data and better resources to train on, the results for the "Generation" (unsupervised) and "Classification" (supervised) tasks will improve.
+2. **Supervised Learning:**  We can see that the Transformer-based Deep Learning model outperforms every other model we tested, showcasing the power of transformers once again. One thing to note is that, despite having very little data and a class imbalance in the labels, the Transformer-based model performed admirably during supervised learning and required very little training time. 
+
+We are confident that with more data and better resources to train on, the results for the "Generation" (unsupervised) and "Classification" (supervised) tasks will improve.
 
 
 # References
