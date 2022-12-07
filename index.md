@@ -13,17 +13,18 @@ Project Team 18
     2. [Supervised](#supervised-learning)
 5. [Results and Discussion](#results-and-discussion)
     1. [Unsupervised](#unsupervised-learning-1)
-        1. [CoLA](#cola)
-        2. [Bert Score](#bert-score)
-        3. [BLEU](#bleu)
-        4. [Self-BLEU](#self-bleu)
-        5. [Word Mover's Distance](#word-movers-distancewmd)  
+        1. [Metrics](#metrics-used)
+        2. [Results](#results)
+        3. [AWD-LSTM](#awd_lstm)
+        4. [Transformer](#transformer)
+        5. [Transformer XL](#transformerxl) 
         6. [Analysis](#analysis)
     2. [Supervised](#supervised-learning-1)  
-        1. [Logistic Regression](#results-using-logistic-regression)
-        2. [CNN-based Deep Learning model](#results-for-cnn-based-deep-learning-model)
-        3. [Transformer-based Deep Learning model](#results-for-transformer-based-deep-learning-model)
-        4. [Analysis](#analysis-1)
+        1. [Results](#results-using-logistic-regression)
+        2. [Logistic Regression](#results-using-logistic-regression)
+        3. [CNN-based Deep Learning model](#results-for-cnn-based-deep-learning-model)
+        4. [Transformer-based Deep Learning model](#results-for-transformer-based-deep-learning-model)
+        5. [Analysis](#analysis-1)
 6. [Conclusion](#conclusion)
 7. [References](#references)
 8. [Contributions](#contribution-table)
@@ -130,6 +131,8 @@ We then experimented with a Transformer based model, considering the great resul
 
 ## Unsupervised Learning
 
+### Metrics Used
+
 ### CoLA
 
 We manually verified the generated results and none of them were from the training dataset, we further use **GLUE-CoLA**[[7]](#references) to judge the grammatical acceptability of a sentence, with the goal of testing their linguistic competence and removing those which do not have semantic meaning. Although using CoLA makes perfect sense to filter out the ideas before we can score them as ‘Unique’ or ‘Not Unique’, the CoLA metric has its disadvantage - It gives some False Positives and False Negatives
@@ -173,18 +176,19 @@ It calculates the distance a word takes to move itself to another word in some c
 #### How is it used?
 We calculate the WMD value of each candidate(generated) wrt each reference(dataset) sentence, take the minimum of each value, and if that value is greater than a user-defined threshold (in our case 0.39), then we will tag that generated idea as “Unique” else it will be tagged as “Not unique enough”.
 
+### Results
 
 We generate 20 ideas using different architectures, the results are as follows 
 
-1. AWD_LSTM
+#### AWD_LSTM
 
 ![awd](Images/awdlstm.png)
 
-2. Transformer
+#### Transformer
 
 ![trans](Images/transarch.png)
 
-3. TransformerXL
+#### TransformerXL
 
 ![transXL](Images/transXL.png)
 
