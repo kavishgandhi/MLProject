@@ -18,8 +18,7 @@ Project Team 18
         3. [BLEU](#bleu)
         4. [Self-BLEU](#self-bleu)
         5. [Word Mover's Distance](#word-movers-distancewmd)  
-        6. [Findngs](#findngs)
-        7. [Analysis](#analysis)
+        6. [Analysis](#analysis)
     2. [Supervised](#supervised-learning-1)  
         1. [Logistic Regression](#results-using-logistic-regression)
         2. [CNN-based Deep Learning model](#results-for-cnn-based-deep-learning-model)
@@ -133,18 +132,7 @@ We then experimented with a Transformer based model, considering the great resul
 
 ### CoLA
 
-We manually verified the generated results and none of them were from the training dataset, we further use **GLUE-CoLA**[[7]](#references) to judge the grammatical acceptability of a sentence, with the goal of testing their linguistic competence and removing those which do not have semantic meaning, we are left with the following ideas.
-
-
-![glue-cola](Images/cola.jpg)
-<div align="center"> <em>Grammatically correct results (according to CoLA)</em> </div>
-
-
-Although using CoLA makes perfect sense to filter out the ideas before we can score them as ‘Unique’ or ‘Not Unique’, the CoLA metric has its disadvantages:
-1. It gives some False Positives, for instance,
-    * In the 3rd idea in the above image ***“and other neural networks”***, the sentence in itself is semantically correct but cannot be treated as an ML project Idea.
-2. It also gives some False Negatives, for instance,
-    * The generated idea ***“projecting calibration of a machine learning algorithms to predict”***, gets removed since it gets a low semantic score from CoLA, but can be treated as an ML Project Idea.
+We manually verified the generated results and none of them were from the training dataset, we further use **GLUE-CoLA**[[7]](#references) to judge the grammatical acceptability of a sentence, with the goal of testing their linguistic competence and removing those which do not have semantic meaning. Although using CoLA makes perfect sense to filter out the ideas before we can score them as ‘Unique’ or ‘Not Unique’, the CoLA metric has its disadvantage - It gives some False Positives and False Negatives
 
 
 Despite its disadvantages, the analysis done using CoLA can be a starting point for further analysis since we don't want to run any analysis on the sentences which do not semantically make sense.
@@ -171,9 +159,6 @@ The variants of BLEU used in our project are, BLEU-2, BLEU-3, and BLEU-4 here, e
 
 ***(Note, we did not make use of BLEU-1, since we also want to capture the context while calculating the score)***
 
-![unique](Images/unique.jpg)
-<div align="center"> <em>Unique or Not unique according to BLEU scores</em> </div>
-
 ### Self-BLEU
 Self-BLEU is a smart use of the traditional BLEU metric for capturing and quantifying diversity in the generated text. It makes use of BLEU scores and their variants and smaller values mean more diverse generated text.
 
@@ -182,21 +167,13 @@ Self-BLEU is a smart use of the traditional BLEU metric for capturing and quanti
 2. Iterate over all the unique sentences, generate BLEU scores for all, and store them in a list (we use BLEU-2, BLEU-3, and BLEU-4).
 3. Finally, take the average of the list calculated as a part of step 2.
 
-<p align="center">
-  <img src="Images/diversity.jpg" />
-</p>
-<div align="center"> <em>Diversity in the generated text</em> </div>
-
 ### Word Mover’s Distance(WMD)
 It calculates the distance a word takes to move itself to another word in some common hyperspace representation. This method can be used to determine the semantic closeness between the generated and the reference text pieces by calculating the minimum word-word distance it takes to transform a sentence into another sentence. The distance calculated by the WMD gives an idea of how much similar the sentence will be to the reference sentence. The greater the distance, the more dissimilar the candidate sentence is.
 
 #### How is it used?
 We calculate the WMD value of each candidate(generated) wrt each reference(dataset) sentence, take the minimum of each value, and if that value is greater than a user-defined threshold (in our case 0.39), then we will tag that generated idea as “Unique” else it will be tagged as “Not unique enough”.
 
-![unique](Images/unique.jpg)
-<div align="center"> <em>Unique or Not unique according to BLEU scores</em> </div>
 
-### Findngs
 We generate 20 ideas using different architectures, the results are as follows 
 
 1. AWD_LSTM
