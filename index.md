@@ -270,5 +270,5 @@ In this project, we experimented with different models and approaches for unsupe
 
 # Contribution Table
 
-![Table](Images/table.PNG)
+![Table](Images/contribution.PNG)
 
