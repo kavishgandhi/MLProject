@@ -256,13 +256,17 @@ In this project, we experimented with different models and approaches for unsupe
 4. [Stanford Projects](https://cs229.stanford.edu/projects2004)
 5. [Past Projects](http://cs230.stanford.edu/past-projects/)
 6. [Transfer Learning for Style-Specific Text Generation](https://nips2018creativity.github.io/doc/Transfer%20Learning%20for%20Style-Specific%20Text%20Generation.pdf)
-7. [Glue: A MultiTask Benchmark and Analysis Platform for Natural Language Understanding](https://openreview.net/pdf?id=rJ4km2R5t7)
-8. [Evaluation Metrics for Multi-Label Classification](https://medium.datadriveninvestor.com/a-survey-of-evaluation-metrics-for-multilabel-classification-bb16e8cd41cd)
-9. [ BERTScore: Evaluating Text Generation with BERT](https://arxiv.org/abs/1904.09675)
-10. [BLEU: a Method for Automatic Evaluation of Machine Translation](https://aclanthology.org/P02-1040.pdf)
-11. [Texygen: A Benchmarking Platform for Text Generation Models](https://arxiv.org/pdf/1802.01886.pdf)
-12. [From Word Embeddings To Document Distances](https://proceedings.mlr.press/v37/kusnerb15.pdf)
-
+7. [Attention Is All You Need](https://arxiv.org/abs/1706.03762)
+8. [Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context](https://arxiv.org/abs/1901.02860)
+9. [Glue: A MultiTask Benchmark and Analysis Platform for Natural Language Understanding](https://openreview.net/pdf?id=rJ4km2R5t7)
+10. [ BERTScore: Evaluating Text Generation with BERT](https://arxiv.org/abs/1904.09675)
+11. [BLEU: a Method for Automatic Evaluation of Machine Translation](https://aclanthology.org/P02-1040.pdf)
+12. [Texygen: A Benchmarking Platform for Text Generation Models](https://arxiv.org/pdf/1802.01886.pdf)
+13. [Data Preprocessing and EDA for Natural Language Processing](https://medium.com/geekculture/data-preprocessing-and-eda-for-natural-language-processing-56e45c1df36d)
+14. [Exploratory Data Analysis of Text data Including Visualization](https://regenerativetoday.com/exploratory-data-analysis-of-text-data-including-visualization-and-sentiment-analysis/)
+15. [TF-IDF Basics with Pandas and Scikit-Learn](http://www.ultravioletanalytics.com/blog/tf-idf-basics-with-pandas-scikit-learn)
+16. [From Word Embeddings To Document Distances](https://proceedings.mlr.press/v37/kusnerb15.pdf)
+17. [Evaluation Metrics for Multi-Label Classification](https://medium.datadriveninvestor.com/a-survey-of-evaluation-metrics-for-multilabel-classification-bb16e8cd41cd)
 
 # Contribution Table
 
