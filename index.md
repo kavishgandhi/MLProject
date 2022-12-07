@@ -285,7 +285,7 @@ In this project, we experimented with different models and approaches for unsupe
 ![Table](Images/contribution.PNG)
 
 # Presentation Video
-<iframe width="420" height="315"
+<iframe width="800" height="500"
 src="https://youtube.com/embed/CCy0QJb4N8Q">
 </iframe>
 
