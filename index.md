@@ -28,8 +28,6 @@ Project Team 18
         3. [Transformer-based Deep Learning model](#results-for-transformer-based-deep-learning-model)
         4. [Analysis](#analysis-1)
 6. [Conclusion](#conclusion)
-    1. [Unsupervised](#unsupervised-learning-1)
-    2. [Supervised](#supervised-learning-1)
 7. [References](#references)
 8. [Contributions](#contribution-table)
 
