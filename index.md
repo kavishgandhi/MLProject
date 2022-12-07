@@ -30,6 +30,7 @@ Project Team 18
 6. [Conclusion](#conclusion)
 7. [References](#references)
 8. [Contributions](#contribution-table)
+9. [Presentation](#presentation-video)
 
 # Introduction 
 With the advancement of research in the domain of machine learning, one of the active problems is generating sentences with semantic meaning. A lot of progress has been made in the field of NLP to perform tasks such as text classification, language modeling, and natural language understanding. BERT[[1]](#references) is designed to pre-train deep bidirectional representations from unlabeled text by jointly conditioning on both the left and right context in all layers. As a result, the pre-trained BERT model can be fine-tuned with just one additional output layer to create state-of-the-art models for a wide range of tasks. ULMFiT[[2]](#references) proposed an effective transfer learning method that can be applied to any task in NLP, and introduce techniques that are key for fine-tuning a language model. The paper which introduces AWD-LSTM[[3]](#references), also proposed ways to investigate strategies for regularizing and optimizing LSTM-based models for the specific problem of word-level language modeling - which means building a model which can calculate the joint level probability of what the next word should be, given a sequence of words. The approach and results displayed using AWD-LSTM were our main source of inspiration behind our project. In this project, we plan to leverage and build on top of similar NLP research and fine-tune pre-trained models to generate novel Machine Learning project ideas using transfer learning and classify ML project ideas into different labels. 
@@ -283,3 +284,8 @@ In this project, we experimented with different models and approaches for unsupe
 
 ![Table](Images/contribution.PNG)
 
+# Presentation Video
+<video controls>
+  <source src="https://www.youtube.com/watch?v=CCy0QJb4N8Q" type="video/mp4">
+Your browser does not support the video tag.
+</video>
